@@ -2,7 +2,9 @@
 
 ## Overview
 This is a demo of a shopping website, totally developed using Angular
+
 The app lives here on Firebase
+
 [https://ricardo-angular-shop.firebaseapp.com/](https://ricardo-angular-shop.firebaseapp.com/) 
 
 ## Dependencies
