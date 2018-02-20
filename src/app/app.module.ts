@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsComponent } from './products/products.component';
 import { CheckOutComponent } from './check-out/check-out.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CheckOutComponent } from './check-out/check-out.component';
     HomeComponent,
     NavbarComponent,
     ProductsComponent,
-    CheckOutComponent
+    CheckOutComponent,
+    OrderSuccessComponent
   ],
   imports: [
     BrowserModule,
