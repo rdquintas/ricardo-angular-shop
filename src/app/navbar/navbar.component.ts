@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
@@ -9,13 +10,14 @@ import * as firebase from 'firebase';
 })
 export class NavbarComponent {
 
-  user: firebase.User;
+  user$: Observable<firebase.User>;
 
   constructor(private afAuth: AngularFireAuth) {
-    afAuth.authState.subscribe(user => {
-      this.user = user;
-      console.log('authstate:', this.user);
-    });
+    this.user$ = afAuth.authState;
+    // afAuth.authState.subscribe(user => {
+    //   this.user = user;
+    //   console.log('authstate:', this.user);
+    // });
   }
 
   logout() {
