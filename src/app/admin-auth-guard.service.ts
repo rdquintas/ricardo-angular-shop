@@ -11,12 +11,13 @@ export class AdminAuthGuardService implements CanActivate {
 
   constructor(private auth: AuthService, private userService: UserService) { }
 
-  canActivate() {
-    return this.auth.user$.switchMap(user => {
-      return this.userService.get(user.uid);
-    }).map(appUser => {
-      console.log('appUser.isAdmin:', appUser.isAdmin);
-      return appUser.isAdmin;
-    });
+  canActivate(): Observable<boolean> {
+    return this.auth.appUser$.map(appUser => appUser.isAdmin);
+    // return this.auth.user$.switchMap(user => {
+    //   return this.userService.get(user.uid);
+    // }).map(appUser => {
+    //   console.log('a ppUser.isAdmin:', appUser.isAdmin);
+    //   return appUser.isAdmin;
+    // });
   }
 }
